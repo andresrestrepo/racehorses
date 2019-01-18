@@ -1,0 +1,32 @@
+.horse{
+    position: absolute;
+}
+
+.container-horse{
+    position: relative;
+}
+
+.horse > img {
+    width: 100px;
+}
+
+.horse1{
+    width: 20px;
+    background: yellow;
+    border-radius: 50%;
+    height: 20px;
+}
+
+.horse2{
+    width: 20px;
+    background: blue;
+    border-radius: 50%;
+    height: 20px;
+}
+
+.horse3{
+    width: 20px;
+    background: red;
+    border-radius: 50%;
+    height: 20px;
+}
