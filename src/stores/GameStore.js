@@ -7,10 +7,15 @@ class GameStore {
    addPosition(name){
        this.positions.push(name)
    }
+
+   get positionsLen(){
+       return this.positions.length;
+   }
 }
 
 decorate(GameStore, {
     positions: observable,
+    positionsLen: computed,
     addPosition: action
 })
 

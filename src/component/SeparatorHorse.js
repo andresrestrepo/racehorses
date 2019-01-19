@@ -4,7 +4,6 @@ import './SeparatorHorse.css';
 
 class SeparatorHorse extends Component {
 
-
     render() {
         return (
             <div className="separator-horse"></div>

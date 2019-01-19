@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import './Header.css';
+import playImage from '../assets/play-button.png';
 
 class Header extends Component {
 
@@ -15,7 +16,6 @@ class Header extends Component {
 
     startRaceHandler(){
         const { horses } = this.props;
-        console.log(horses[0].current);
         horses[0].current.startRace();
         horses[1].current.startRace();
         horses[2].current.startRace();
@@ -25,12 +25,21 @@ class Header extends Component {
         })
     }
 
+    resetState(){
+        this.setState({
+            disabled: ""
+        })
+    }
+
     render() {
         const disabled = this.state.disabled;
         return (
             <div className="header">
                 <div className="header-title">Race Horses</div>
-                <button onClick={this.startRaceHandler} ref={this.btn} disabled={disabled} >Start Race</button>
+                <button onClick={this.startRaceHandler} ref={this.btn} disabled={disabled} >
+                    START RACE
+                    <img className="img-start" src={playImage} />
+                </button>
             </div>
         )
     }

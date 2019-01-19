@@ -15,7 +15,7 @@ class HorseComponent extends Component {
     }
 
     moveHorse() {
-        let plusPosition = Math.floor((Math.random() * 20) + 1);
+        let plusPosition = Math.floor((Math.random() * 25) + 10);
         const { store, horse} = this.props;
         //check finished 
         if (this.state.position + plusPosition >= window.innerWidth - 100) {
@@ -43,8 +43,10 @@ class HorseComponent extends Component {
         clearInterval(this.interval);
     }
 
-    componentDidMount() {
-        //this.startRace();
+    resetRace(){
+        this.setState({
+            position: 0
+        })
     }
 
     componentWillUnmount() {
@@ -56,6 +58,7 @@ class HorseComponent extends Component {
             <div className="container-horse">
                 <div className="horse" style={{ left: this.state.position }}>
                     <div className={this.props.horse}></div>
+                    <div>{this.props.horse}</div>
                     <img src={horse} ></img>
                 </div>
             </div>
